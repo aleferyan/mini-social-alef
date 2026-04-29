@@ -1,7 +1,10 @@
+//=== ESTADO (dados da manipulação) ===
 let likeCount = 0;
 let dislikeCount = 0;
 let curtido = false;
 let descurtido = false;
+
+//=== SERVICE (regras de negócio) ===
 
 function curtir() {
   if (curtido == false){
@@ -44,7 +47,19 @@ function descurtir() {
   }
 }
 
+// === CONTROLLER (intermediação) ===
+function clicarCurtir(){
+   curtir();
+
+} 
+
+function clicarDescurtir(){
+   descurtir();
+
+}
+
+// === EVENTOS ===
 
 
-document.getElementById("likeBtn").addEventListener("click", curtir);
-document.getElementById("dislikeBtn").addEventListener("click", descurtir);
+document.getElementById("likeBtn").addEventListener("click", clicarCurtir);
+document.getElementById("dislikeBtn").addEventListener("click", clicarDescurtir);
